@@ -22,7 +22,7 @@ def get_number_of_pull_requests(github_access_token):
 	return pull_requests.totalCount
 
 
-def send_email(number_of_pull_reqeusts):
+def send_email(number_of_pull_requests):
 	port = 465
 	password = input('Please enter your password:\n')
 	context = ssl.create_default_context()
@@ -31,5 +31,5 @@ def send_email(number_of_pull_reqeusts):
 		server.login("pullrequestsemailer@gmail.com", password)
 		sender_email = 'pullrequestsemailer@gmail.com'
 		receiver_email = "uzaira960@gmail.com"
-		message = f"{number_of_pull_reqeusts}"
+		message = f"{number_of_pull_requests}"
 		server.sendmail(sender_email, receiver_email, message)
